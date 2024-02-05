@@ -8,6 +8,16 @@ const port = 8000;
 
 connectMongodb();
 
+//parse json format
+app.use(express.json());
+
+// routes
+const serviceRoutes = require('../routes/serviceRoutes/service.route');
+const blogRoutes = require('../routes/blogRoutes/blog.route');
+
+app.use("/service",serviceRoutes)
+app.use("/blog",blogRoutes)
+
 
 
 app.listen(port, () => {
