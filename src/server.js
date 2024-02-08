@@ -14,10 +14,14 @@ app.use(express.json());
 // routes
 const serviceRoutes = require('../routes/serviceRoutes/service.route');
 const blogRoutes = require('../routes/blogRoutes/blog.route');
+const galleryRoutes = require('../routes/galleryRoutes/gallery.route')
+const userRoutes = require('../routes/userRoutes/user.route');
+
 
 app.use("/service",serviceRoutes)
 app.use("/blog",blogRoutes)
-
+app.use("/gallery",galleryRoutes)
+app.use("/user",userRoutes)
 
 
 app.listen(port, () => {
